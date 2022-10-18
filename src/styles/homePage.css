@@ -1,0 +1,39 @@
+.hero__section {
+    background-color: var(--hero-bg);
+}
+
+.hero__content {
+    padding-top: 45px;
+}
+
+.hero__content h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 20px 0px;
+}
+
+.hero__content p {
+    color: var(--primary-color);
+    line-height: 28px;
+}
+
+.hero__content p:nth-child(1) {
+    font-weight: 500;
+}
+
+.hero__content .shop__btn {
+    outline: none;
+    border: none;
+    margin-top: 40px;
+}
+
+.hero__content .shop__btn a {
+    padding: 8px 20px;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    text-transform: uppercase;
+}
