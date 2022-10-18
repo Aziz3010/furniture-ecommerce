@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import "./Header.css";
 import { Container, Row } from "reactstrap";
 import { NavLink } from "react-router-dom";
@@ -22,8 +22,32 @@ const nav__link = [
 ];
 
 const Header = () => {
+  const headerRef = useRef(null);
+  const menuRef = useRef(null);
+
+  const stickyHeader = () => {
+    window.addEventListener("scroll", () => {
+      if (document.body.scrollTop > 70 || document.documentElement.scrollTop > 70) {
+        headerRef.current.classList.add("sticky_header");
+      } else {
+        headerRef.current.classList.remove("sticky_header");
+      }
+    });
+  };
+
+  useEffect(() => {
+    stickyHeader();
+
+    return () => window.removeEventListener("scroll", stickyHeader);
+  });
+
+  const menuToggle = () => {
+    menuRef.current.classList.toggle("active__menu");
+  };
+
+
   return (
-    <header className='header'>
+    <header className='header' ref={headerRef}>
       <Container>
         <Row>
           <div className="nav__wrapper">
@@ -37,7 +61,7 @@ const Header = () => {
             </div>
 
             {/* navigation */}
-            <div className="navigation">
+            <div className="navigation" ref={menuRef} onClick={menuToggle}>
               <ul className="menu">
                 {nav__link.map((link, index) => {
                   return (
@@ -62,13 +86,12 @@ const Header = () => {
               <span>
                 <motion.img whileTap={{ scale: 1.2 }} src={userPhoto} alt="user photo" />
               </span>
-            </div>
-
-            {/* mobile menu */}
-            <div className="mobile__menu">
-              <span>
-                <i className="ri-menu-line"></i>
-              </span>
+              {/* mobile menu */}
+              <div className="mobile__menu">
+                <span  onClick={menuToggle}>
+                  <i className="ri-menu-line"></i>
+                </span>
+              </div>
             </div>
           </div>
         </Row>
