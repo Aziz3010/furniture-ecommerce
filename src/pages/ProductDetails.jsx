@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
+import Helmet from '../components/Helmet/Helmet';
 
 const ProductDetails = () => {
-  return (
-    <div>ProductDetails</div>
-  )
+  return <Helmet title="Product Details">
+  </Helmet>
 }
 
-export default ProductDetails
+export default ProductDetails;

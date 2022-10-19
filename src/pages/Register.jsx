@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
+import Helmet from '../components/Helmet/Helmet';
 
 const Register = () => {
-  return (
-    <div>Register</div>
-  )
-}
+  return <Helmet title="Register">
+  </Helmet>
+};
 
-export default Register
+export default Register;

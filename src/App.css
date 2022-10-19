@@ -84,7 +84,11 @@ section {
     display: none;
   }
 
-  .clock__wrapper {
-    flex-wrap: wrap;
+  .timer__count .clock__wrapper {
+    column-gap: 8px !important;
+  }
+
+  .timer__count .clock__wrapper .clock__data {
+    column-gap: 8px !important;
   }
 }

@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import Helmet from '../components/Helmet/Helmet';
 
 const Shop = () => {
-  return (
-    <div>Shop</div>
-  )
+  return <Helmet title="Shop">
+
+  </Helmet>
 }
 
-export default Shop
+export default Shop;
