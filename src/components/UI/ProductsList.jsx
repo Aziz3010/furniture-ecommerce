@@ -5,11 +5,18 @@ import ProductCard from './ProductCard';
 const ProductsList = ({ data }) => {
     return (
         <Row>
-            {data?.map((productData,index) => {
-                return (
-                    <ProductCard productData={productData} key={index} />
-                )
-            })}
+            {
+                data.length > 0 ?
+                    data?.map((productData, index) => {
+                        return (
+                            <ProductCard productData={productData} key={index} />
+                        )
+                    })
+
+
+
+                    : <p className='text-center m-0'>No products</p>
+            }
         </Row>
     )
 }
