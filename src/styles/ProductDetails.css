@@ -1,0 +1,115 @@
+.product__details h2 {
+    font-style: 1.6rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.product__rating {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 15px;
+}
+
+.product__rating span {
+    color: coral;
+    font-weight: 500;
+}
+
+.product__rating span i {
+    color: coral;
+}
+
+.product__price {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.addToCart__btn {
+    outline: none;
+    border: none;
+    margin-top: 30px;
+    padding: 8px 20px;
+    font-size: .9rem;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.tab__wrapper {
+    display: flex;
+    align-items: center;
+    border-bottom: .5px solid var(--hero-bg);
+}
+
+.tab__wrapper :first-child {
+    border-right: .5px solid var(--hero-bg);
+}
+
+.tab__wrapper h6 {
+    padding: 0 20px 10px 20px;
+    cursor: pointer;
+    color: var(--small-text-color);
+    font-weight: 500;
+}
+
+.tab__wrapper h6.active__tab {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.tab__content {
+    padding: 20px;
+}
+
+.tab__content-description,
+.tab__content-reviews {
+    margin-bottom: 10px;
+}
+
+.tab__content-reviews .review {
+    margin-bottom: 20px;
+}
+
+.tab__content-reviews .review h6 {
+    color: coral;
+}
+
+.reviews__form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.reviews__form .stars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.reviews__form .stars span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.comment__btn {
+    outline: none;
+    border: none;
+    padding: 8px 20px;
+    font-size: .9rem;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    text-transform: capitalize;
+}

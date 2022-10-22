@@ -1,15 +1,15 @@
 import React from 'react';
-import { motion } from "framer-motion";
 import { Col } from 'reactstrap';
+import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
-import "../../styles/productCard.css";
 import { useDispatch } from 'react-redux';
 import { cartActions } from '../../redux/slices/CartSlice';
 import { toast } from 'react-toastify';
+import "../../styles/productCard.css";
 
-const ProductCard = ({productData}) => {
+const ProductCard = ({ productData }) => {
     const dispatch = useDispatch();
-    const addToCart = ()=>{
+    const addToCart = () => {
         dispatch(cartActions.addItem({
             id: productData.id,
             productName: productData.productName,
@@ -27,7 +27,7 @@ const ProductCard = ({productData}) => {
                 </div>
 
                 <div className="p-2 product__info">
-                    <Link to={`/shop/${productData.id}`}><h3>{productData.productName}</h3></Link>
+                    <Link to={`/shop/${productData.id}`}><h3>{productData.productName.length > 17 ? productData.productName.slice(0, 17) + ".." : productData.productName}</h3></Link>
                     <span>{productData.category}</span>
                 </div>
 

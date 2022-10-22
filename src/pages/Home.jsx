@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Helmet from '../components/Helmet/Helmet';
 import { Container, Row, Col } from "reactstrap";
 import heroImg from "../assets/images/hero-img.png";
-import '../styles/homePage.css';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Services from '../services/Services';
@@ -10,13 +9,13 @@ import ProductsList from '../components/UI/ProductsList';
 import Products from "../assets/data/products";
 import counterImg from "../assets/images/counter-timer-img.png";
 import Clock from '../components/UI/Clock';
+import '../styles/homePage.css';
 
 const Home = () => {
   const [trendingProducts, setTrendingProducts] = useState([]);
   const [bestSalesProducts, setBestSalesProducts] = useState([]);
   const [mobiles_wirelessProducts, setMobilesWirelessProducts] = useState([]);
   const [popularProducts, setPopularProducts] = useState([]);
-
   const YEAR = new Date().getFullYear();
 
   useEffect(() => {

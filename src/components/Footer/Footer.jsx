@@ -10,7 +10,7 @@ const Footer = () => {
       <Container>
         <Row>
           <Col lg="4" className='py-4'>
-            <div className="logo mb-5">
+            <div className="logo mb-4">
               <div>
                 <h1 className='text-white'>Multimart</h1>
               </div>
@@ -22,7 +22,7 @@ const Footer = () => {
           </Col>
           <Col lg="3" className='py-4'>
             <div className="footer__quick-links">
-              <h4 className="quick_links-title mb-5">Top Categories</h4>
+              <h4 className="quick_links-title mb-4">Top Categories</h4>
               <ListGroup>
                 <ListGroupItem className='p-0 border-0 bg-transparent'><Link to="#">Mobile Phones</Link></ListGroupItem>
                 <ListGroupItem className='p-0 border-0 bg-transparent'><Link to="#">Moder Sofa</Link></ListGroupItem>
@@ -33,7 +33,7 @@ const Footer = () => {
           </Col>
           <Col lg="2" className='py-4'>
             <div className="footer__useful-links">
-              <h4 className="useful-links-title mb-5">Useful Links</h4>
+              <h4 className="useful-links-title mb-4">Useful Links</h4>
               <ListGroup>
                 <ListGroupItem className='p-0 border-0 bg-transparent'><Link to="/home">Home</Link></ListGroupItem>
                 <ListGroupItem className='p-0 border-0 bg-transparent'><Link to="/shop">Shop</Link></ListGroupItem>
@@ -45,7 +45,7 @@ const Footer = () => {
           </Col>
           <Col lg="3" className='py-4'>
             <div className="footer__contact">
-              <h4 className="contact-title mb-5">Contact</h4>
+              <h4 className="contact-title mb-4">Contact</h4>
               <ListGroup>
 
                 <ListGroupItem className='p-0 border-0 bg-transparent'>
@@ -74,7 +74,7 @@ const Footer = () => {
             </div>
           </Col>
         </Row>
-        <Row className='mt-5'>
+        <Row className='mt-3'>
           <Col lg='12'>
             <h6 className='copyright'>Copyright <i className="ri-copyright-line"></i> {YEAR}, Developed by Ahmed abdelaziz</h6>
           </Col>

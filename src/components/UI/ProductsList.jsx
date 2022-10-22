@@ -12,9 +12,6 @@ const ProductsList = ({ data }) => {
                             <ProductCard productData={productData} key={index} />
                         )
                     })
-
-
-
                     : <p className='text-center m-0'>No products</p>
             }
         </Row>

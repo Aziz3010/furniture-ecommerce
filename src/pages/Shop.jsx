@@ -65,12 +65,9 @@ const Shop = () => {
               sortData === "descending" ? <ProductsList data={productsData.sort((a, b) => (parseFloat(a.price) > parseFloat(b.price) ? -1 : 1))} /> :
                 <p className='m-0 text-center'>No sort tpye</p>
         }
-
       </Container>
     </section>
   </Helmet>
 }
 
 export default Shop;
-
-// vid 2 - 00:39:55
