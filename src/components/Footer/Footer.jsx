@@ -12,7 +12,7 @@ const Footer = () => {
           <Col lg="4" className='py-4'>
             <div className="logo mb-4">
               <div>
-                <h1 className='text-white'>Multimart</h1>
+                <h1 className='text-white'>Azizmarket</h1>
               </div>
             </div>
 

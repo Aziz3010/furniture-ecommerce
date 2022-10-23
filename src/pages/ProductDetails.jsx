@@ -8,13 +8,19 @@ import { useDispatch } from 'react-redux';
 import { cartActions } from '../redux/slices/CartSlice';
 import { toast } from 'react-toastify';
 import "../styles/ProductDetails.css";
+import ProductsList from '../components/UI/ProductsList';
 
 const ProductDetails = () => {
   const dispatch = useDispatch();
   const { productID } = useParams();
   const [tab, setTab] = useState("description");
+  const [rating, setRating] = useState(null);
+  const [review, setReviw] = useState("");
   const selectedProduct = Products.find((product) => product.id === productID);
-  const { productName, imgUrl, price, shortDesc, description, reviews, avgRating } = selectedProduct;
+  const { productName, imgUrl, price, shortDesc, description, reviews, avgRating, category } = selectedProduct;
+  const ratings = [1, 2, 3, 4, 5];
+
+  const relatedProducts = Products.filter((product) => product.category === category);
 
   const addToCart = () => {
     dispatch(cartActions.addItem({
@@ -38,7 +44,7 @@ const ProductDetails = () => {
           <Col lg="6">
             <div className="product__details-details">
               <h2>{productName}</h2>
-              <div className="product__rating">
+              <div className="product__rating d-flex align-items-center gap-5">
                 <div>
                   <span><i className="ri-star-s-fill"></i></span>
                   <span><i className="ri-star-s-fill"></i></span>
@@ -48,7 +54,12 @@ const ProductDetails = () => {
                 </div>
                 <p>( <span>{avgRating}</span> ratings )</p>
               </div>
-              <span className='product__price'>${price}</span>
+
+              <div className='d-flex align-items-center gap-5'>
+                <span className='product__price'>${price}</span>
+                <span>Category: {category.toUpperCase()}</span>
+              </div>
+
               <p className='mt-3'>{shortDesc}</p>
               <motion.button whileTap={{ scale: 1.2 }} onClick={addToCart} className='addToCart__btn'>add to cart</motion.button>
             </div>
@@ -81,15 +92,23 @@ const ProductDetails = () => {
                           )
                         })
                       }
+
+                      {/* for testing only */}
+                      {
+                        review !== "" ?
+                          <div className='review'>
+                            <h6>{rating} (Rating)</h6>
+                            <p>{review}</p>
+                          </div>
+                          :
+                          null
+                      }
+
                       <form className='reviews__form'>
                         <h5 className='text-center mb-4'>Leave a review</h5>
-                        <input type="text" placeholder='Review' className='form-control mb-3' />
+                        <input onChange={(e) => { setReviw(e.target.value) }} type="text" placeholder='Review' className='form-control mb-3' />
                         <div className="stars">
-                          <span>1 <i className="ri-star-s-fill"></i></span>
-                          <span>2 <i className="ri-star-s-fill"></i></span>
-                          <span>3 <i className="ri-star-s-fill"></i></span>
-                          <span>4 <i className="ri-star-s-fill"></i></span>
-                          <span>5 <i className="ri-star-s-fill"></i></span>
+                          {ratings.map((element, index) => (<motion.span whileTap={{ scale: 1.2 }} key={index} onClick={() => { setRating(element) }}>{element} <i className="ri-star-s-fill"></i></motion.span>))}
                         </div>
                         <button className='comment__btn'>Send</button>
                       </form>
@@ -100,6 +119,17 @@ const ProductDetails = () => {
             </div>
           </Col>
         </Row>
+      </Container>
+    </section>
+
+    <section className="related__products">
+      <Container>
+        <Row>
+          <Col lg="12" className='mb-4'>
+            <h4 className='text-center'>You might also like</h4>
+          </Col>
+        </Row>
+        <ProductsList data={relatedProducts.slice(0, 4)} />
       </Container>
     </section>
   </Helmet>

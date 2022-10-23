@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import "./Header.css";
 import { Container, Row } from "reactstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/eco-logo.png";
 import userPhoto from "../../assets/images/user-icon.png";
 import { motion } from "framer-motion";
@@ -25,6 +25,7 @@ const nav__link = [
 const Header = () => {
   const headerRef = useRef(null);
   const menuRef = useRef(null);
+  const navigate = useNavigate();
   const totalQuantity = useSelector(state=>state.cart.totalQuantity);
 
   const stickyHeader = () => {
@@ -39,12 +40,15 @@ const Header = () => {
 
   useEffect(() => {
     stickyHeader();
-
     return () => window.removeEventListener("scroll", stickyHeader);
   });
 
   const menuToggle = () => {
     menuRef.current.classList.toggle("active__menu");
+  };
+
+  const navigateToCart = () => {
+    navigate("/cart");
   };
 
 
@@ -57,7 +61,7 @@ const Header = () => {
             <div className="logo">
               <img src={logo} alt="logo" />
               <div>
-                <h1>Multimart</h1>
+                <h1>Azizmarket</h1>
                 <p>Since 1995</p>
               </div>
             </div>
@@ -81,7 +85,7 @@ const Header = () => {
                 <i className="ri-heart-line"></i>
                 <span className='bdg'>2</span>
               </span>
-              <span className='cart__icon'>
+              <span className='cart__icon' onClick={navigateToCart}>
                 <i className="ri-shopping-bag-line"></i>
                 <span className='bdg'>{totalQuantity}</span>
               </span>

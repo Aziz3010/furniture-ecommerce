@@ -1,0 +1,43 @@
+.cartPage table thead {
+    background-color: #0a1d37d1;
+    color: #fff;
+}
+
+.cartPage table tbody tr td {
+    line-height: 80px;
+}
+
+.td_productImg {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+.tb__controls {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.increase_decrease__btn {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.checkout__div p {
+    padding: 0 5px;
+    margin-bottom: 10px;
+}
+
+.checkout__div-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}

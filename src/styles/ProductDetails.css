@@ -5,9 +5,6 @@
 }
 
 .product__rating {
-    display: flex;
-    align-items: center;
-    gap: 50px;
     margin-bottom: 15px;
 }
 
@@ -99,6 +96,7 @@
     align-items: center;
     font-size: 15px;
     cursor: pointer;
+    color: coral;
 }
 
 .comment__btn {
@@ -112,4 +110,9 @@
     background-color: var(--primary-color);
     cursor: pointer;
     text-transform: capitalize;
+}
+
+.related__products h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
 }
