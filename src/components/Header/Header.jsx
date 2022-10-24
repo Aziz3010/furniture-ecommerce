@@ -83,7 +83,7 @@ const Header = () => {
             <div className="nav__icons">
               <span className='fav__icon'>
                 <i className="ri-heart-line"></i>
-                <span className='bdg'>2</span>
+                <span className='bdg'>0</span>
               </span>
               <span className='cart__icon' onClick={navigateToCart}>
                 <i className="ri-shopping-bag-line"></i>
